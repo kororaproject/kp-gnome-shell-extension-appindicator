@@ -1,0 +1,32 @@
+diff --git a/Makefile b/Makefile
+index 4f87f10..cfcd79b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,13 +2,25 @@
+ 
+ .PHONY= zip-file
+ 
++UUID = appindicatorsupport@rgcjonas.gmail.com
++INSTALLBASE = ~/.local/share/gnome-shell/extensions
++INSTALLNAME = appindicatorsupport@rgcjonas.gmail.com
++
+ # files that go into the zip
+ ZIP= $(wildcard *.js) metadata.json $(wildcard interfaces-xml/*)
+ 
+ zip-file: $(ZIP)
+ 	mkdir -p build
+-	rm -f build/appindicator-support.zip
+-	zip build/appindicator-support.zip $(ZIP)
++	rm -f build/$(UUID).zip
++	zip build/$(UUID).zip $(ZIP)
+ 
+ clean:
+ 	rm -rf build
++
++install:
++	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
++	mkdir -p $(INSTALLBASE)/$(INSTALLNAME)
++	cp -r $(ZIP) $(INSTALLBASE)/$(INSTALLNAME)
++
++uninstall:
++	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
