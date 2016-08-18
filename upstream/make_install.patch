@@ -26,7 +26,7 @@ index 4f87f10..cfcd79b 100644
 +install:
 +	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
 +	mkdir -p $(INSTALLBASE)/$(INSTALLNAME)
-+	cp -r $(ZIP) $(INSTALLBASE)/$(INSTALLNAME)
++	cp -r --parents $(ZIP) $(INSTALLBASE)/$(INSTALLNAME)
 +
 +uninstall:
 +	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
