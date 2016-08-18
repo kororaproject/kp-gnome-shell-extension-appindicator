@@ -4,7 +4,7 @@
 
 Name:		gnome-shell-extension-appindicator
 Version:	3.20
-Release:	1.git%{gitshorttag}%{?dist}
+Release:	2.git%{gitshorttag}%{?dist}
 Summary:	Show indicator icons in the panel
 
 License:	GPLv2+
